@@ -1,0 +1,80 @@
+/* Grundstil */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header, footer {
+    background-color: #d46a6a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Layout für Menü und Inhalt */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu {
+    width: 20%;
+    min-width: 150px;
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-right: 2px solid #336699;
+}
+
+.menu ul {
+    list-style-type: none;
+}
+
+.menu li {
+    margin-bottom: 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+}
+
+.content {
+    width: 40%;
+    padding: 15px;
+    border-left: 2px solid #336699;
+}
+
+.content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Footer Stil */
+footer {
+    background-color: #d46a6a;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+    .content {
+        width: 100%;
+    }
+
+    .menu {
+        width: 100%;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+}
