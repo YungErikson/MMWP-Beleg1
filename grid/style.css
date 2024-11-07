@@ -1,4 +1,3 @@
-/* Grundstil */
 * {
     margin: 0;
     padding: 0;
@@ -17,20 +16,19 @@ header {
     padding: 20px;
 }
 
-/* Layout für Menü und Inhalt */
 .row {
-    display: flex;
+    display: grid;
+    grid-template-columns: 20% 40% 40%;
 }
 
 .menu {
-    width: 20%;
-    min-width: 150px;
     background-color: rgba(0, 0, 0, 0.1);
     padding: 15px;
     border-right: 2px solid #336699;
     position: sticky;
-    top: 20px; /* Abstand zum oberen Rand */
-    align-self: flex-start; /* Ermöglicht Sticky-Verhalten */
+    top: 0;  /* Das Menü bleibt oben, wenn du scrollst */
+    align-self: start;
+    z-index: 10;
 }
 
 .menu ul {
@@ -47,34 +45,31 @@ header {
 }
 
 .content-left {
-    width: 40%;
     padding: 15px;
     border-left: 2px solid #336699;
-    background-color: rgba(0, 119, 255, 0.315); /* Leicht blauer Hintergrund */
+    background-color: rgba(0, 119, 255, 0.315);
 }
 
 .content-left img {
     display: block;
     max-width: 100%;
     height: auto;
-    margin: 0.5cm auto; /* Zentriert das Bild horizontal */
+    margin: 0.5cm auto;
 }
 
 .content-right {
-    width: 40%;
     padding: 15px;
     border-left: 2px solid #336699;
-    background-color: rgba(255, 0, 0, 0.205); /* Leicht roter Hintergrund */
+    background-color: rgba(255, 0, 0, 0.205);
 }
 
 .content-right img {
     display: block;
     max-width: 100%;
     height: auto;
-    margin: 0.5cm auto; /* Zentriert das Bild horizontal */
+    margin: 0.5cm auto;
 }
 
-/* Footer Stil */
 footer {
     background-color: #000000;
     color: white;
@@ -85,12 +80,9 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 800px) {
-    .content-right {
-        width: 100%;
-    }
-
-    .content-left {
-        width: 100%;
+    .row {
+        grid-template-columns: 1fr;
+        gap: 0;  /* Kein Abstand auf mobilen Geräten */
     }
 
     .menu {
@@ -100,7 +92,8 @@ footer {
         border-bottom: 2px solid #336699;
     }
 
-    .row {
-        flex-direction: column;
+    .content-left,
+    .content-right {
+        width: 100%;
     }
 }
